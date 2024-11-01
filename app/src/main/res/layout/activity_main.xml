@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_gravity="center">
+
+        <!-- Кнопки для игрового поля -->
+        <Button
+            android:id="@+id/button00"
+            style="@style/TicTacToeButton"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:contentDescription="Button at row 1, column 1"/>
+
+        <Button
+            android:id="@+id/button01"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 1, column 2"/>
+
+        <Button
+            android:id="@+id/button02"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 1, column 3"/>
+
+        <Button
+            android:id="@+id/button10"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 2, column 1"/>
+
+        <Button
+            android:id="@+id/button11"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 2, column 2"/>
+
+        <Button
+            android:id="@+id/button12"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 2, column 3"/>
+
+        <Button
+            android:id="@+id/button20"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 3, column 1"/>
+
+        <Button
+            android:id="@+id/button21"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 3, column 2"/>
+
+        <Button
+            android:id="@+id/button22"
+            style="@style/TicTacToeButton"
+            android:contentDescription="Button at row 3, column 3"/>
+    </GridLayout>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Сбросить"
+        app:layout_constraintBottom_toTopOf="@id/themeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gridLayout"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <Button
+        android:id="@+id/gameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Играть вдвоем"
+        app:layout_constraintTop_toBottomOf="@id/resetButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/themeButton"/>
+
+
+    <ImageButton
+        android:id="@+id/themeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Сменить тему"
+        android:src="@drawable/ic_sun"
+        app:layout_constraintTop_toBottomOf="@id/gameButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/xWinsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Победы X: 0"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/themeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/oWinsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Победы O: 0"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/xWinsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/drawsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ничьи: 0"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/oWinsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
